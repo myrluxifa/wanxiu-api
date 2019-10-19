@@ -1,0 +1,65 @@
+server:
+  port: 8890
+spring:
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations:
+      - file:/home/wxlive/image
+  datasource:
+    url: jdbc:mysql://152.136.34.178/wanxiu_live?characterEncoding=utf8
+    username: root
+    password: Wanxiu_0124
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1
+  jpa:
+    database: mysql
+    show-sql: true
+
+  redis:
+    database: 0
+    host: 152.136.34.178
+    port: 6379
+    password: wxlive0124
+    jedis:
+      pool:
+        max-active: 100
+        max-wait: 2000
+        max-idle: 500
+        min-idle: 8
+    timeout: 5000
+
+custom:
+  url:
+    prefix: http://152.136.34.178:8890
+  wechat:
+    appid: wx3ad2675417a0ad7d
+    secret: 9931b66c950f0b20502d24473d6009f4
+    appid2: wxbce24e6a169abbd3
+    secret2: 197c71e27b8ef4848182e2eac1440b5d
+    mchId: 1511356811
+    deviceInfo: WEB
+    feeType: CNY
+    tradeType: APP
+    key: wanxiurongyao123wanxiurongyao123
+  tencent:
+    sms:
+      appid: 1400186739
+      appkey: 34fce5b6ba205db10f6bedb37342f76c
+    live:
+      sdkappid: 1400183986
+    IM:
+      sdk_appid: 1400183986
+      private_key: -----BEGIN PRIVATE KEY-----\n
+        MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgLjUTQon7ju990BMR\n
+        ZAaF5hIK98l3JWvx0hDTRdIZy0GhRANCAASr9Ih9siZtOSm0rMQBXlr5hkn5YPeP\n
+        96RLIO8cGjJ2y7q607aPu+IccBPnPdtPcmkkl/hdl7uX1AxNrPu1CA2F\n
+        -----END PRIVATE KEY-----
+  ali:
+    pay:
+      appId: 2016092600597315
+      appPrivateKey: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCpRwwIgmgs0cL/KCOEje8Nx8ae29WJR2hcSr1eRzWF8AbMIqkA3s+0hCJr1X5jfVe+3Xoy5er755wPauCCNJnFBV7/mJj6ZLZqHxqGEqCA6bQKXhEeWQgvWGpXFVjUbmqlzifj5ZMpkWjrh15ixiV1V8iRRt3SsyaoDCK/AgKoZ3f1v//JWfbav6hjlTTdButIMHG7CROjD3P44UM/zx5EliPWyMbJM7BAvL7VW4/osdzdosiggqitBd2V3fCQgNZSeGmZSRpgLUj0l8jcdO9dtzu3vr9BlLjzXGVprHJmYZNSTmHKyA40Mkd0ymhklhsayTLDDBzRP/fx1XqXYHJDAgMBAAECggEBAI+hB9XEiI3W4YRMU26qW3au1pl9375eR29fvzPaadCea7YThqCFbWk2YFpsyJO0C5qYI5JCQVLCH0l5nsr7xKlGOGfY25xBjgGXKJMwBN287hWJ4S6FzosVkw0WwMtmcLkEphYZefdgOMz3jB91Dt10wWp63cZkWd1mhqjZFNY7qtdVenzr5m7zu2sCs+UjyJMlIfkkDMBr0BVc5b448j4hh5dkoHzKejxBLmQ+kgyGP31K0q8QmoNdD2LiO1bMnVZ6IY5AEJBvsdHCqhUF2LvKLkVVC+UJt7xe3QVtaqHiKkbmf/zViveY5mibBC3yYj6rrc1ahiInthFwBbE1ikECgYEA3GgJFIR6e5gdU2VyVLhawEHdo+EsmhaYjM0uQwc5IXzUaZ4lkkA738I8VueHGY52Y/7pn2r2Zldt6bWeTAseF0X/99ZI+xpvpYgjOQEyUQNVjY14/L0UaDLPZokzl5rew0FN8l7Lp/FyBm2QpjFTE/dPwafIm4/KS9AZ2kaUXeECgYEAxJ1ChzWmtz0LXoFWa1/ydr4hBfqAahP1hGtzrQyj2gt0q939Ktn4j2OrSWw2PozV0STpEUxBvYj8rv2SUfUdMUDRQnAqzLYYAjCCAW1xaX1xqziR+5zcg/kRbfRYKvjmcQWfTl2OLX3NwbpcE2o5JuihOHUV8IGo0/2AR2OGLKMCgYEAhcKJiC8iGjHl0j/l0+6R/M28UgGMzPLbn8/BvKH8lQsp6fM1P/3FmHVLoz4dqm/f/62rYLlMUi3LIaO8LtAscdlkj6c3YVTY3u+w2J6WR74rRJ3QCCpD4Ty8y7CGZAJ0ILFYObg4BnMsTSRfPcz/a0WS3KcTwvzPu5TOq75bumECgYACVYOWq1JhVn4uDwcBm0/7jOJDeefQWpBNlCD5au7/BafK6oW43oGO4jYEVx6Fu5JGO1Pw+qDFKT0mrqfwBSLllMlnKoG3kGnUjNLeRXhVMkIJMFC7Ve9gObK1RXNOf0ntCY4Mlhu7+oRYymeRa29mQNi5HNq30jI44geF0W6kVQKBgQCkJJ4pj6W6udYbEMht7C0/uTwxYY/iM3A92WypvSWKLvLr54cPZ88Nj6K/yvK7bd+AJmYL6jPbpLVkVIOeZRufx4BpwPcfHhBLIeQ6/ZnSVnsILNoHLw8I5g9V7ObJwW2be4Yj+Ybxink6IomSv1witZf1ICDr5Xr53YHJBeiFDg==
+      aliPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu54+x5FofWWEsqrqinGKrTpH2KdSV0b2F9MJTGtTIuydCLI69BBE/v2TP8zpSyu6d0Bqmk9HA0Dp2EskpS76HGDMj4ElqHKOYYgR/ZOBjZZfLRvmUTNMmvzkJc0XOjT1esiJOhGX+kwi80kRsDRH/x2ivPBVJzfUo2L7jCi8iKRb57RwmXZmJ9t7VyUYlhTBd2iEzC4bOZve834DNG2zkLJJeEZlkN4tGZyBBHDD92l17TABnSHZLfX5d2JKidtCL79+QUJzYVdVZOp7JDRFvZB1vobBJZ6G5190Gpt2ZpP17vZ2TYlvNHf6dPNySB3nb7OtTN9kyqyKMeNo86SwAQIDAQAB
+      notifyUrl:
